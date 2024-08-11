@@ -7,7 +7,6 @@ plugins {
 android {
     namespace = libs.plugins.navigationNameSpace.get().toString()
 }
-
 dependencies {
     implementation(projects.core)
 

@@ -5,9 +5,8 @@ plugins {
 }
 
 android {
-    namespace = libs.plugins.detailNameSpace.get().toString()
+    namespace = libs.plugins.homeNameSpace.get().toString()
 }
-
 dependencies {
     implementation(projects.core)
     implementation(projects.network)

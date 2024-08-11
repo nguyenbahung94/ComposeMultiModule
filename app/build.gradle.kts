@@ -9,11 +9,13 @@ android {
         applicationId = libs.plugins.mainNameSpace.get().toString()
         versionCode = 1
         versionName = "1.0"
-
         vectorDrawables {
             useSupportLibrary = true
         }
 
+        buildFeatures {
+            buildConfig = true
+        }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -26,6 +28,9 @@ android {
     namespace = libs.plugins.mainNameSpace.get().toString()
 }
 
+kotlin {
+    jvmToolchain(17)
+}
 dependencies {
     implementation(projects.navigation)
     implementation(projects.core)

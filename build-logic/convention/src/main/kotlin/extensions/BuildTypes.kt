@@ -8,12 +8,17 @@ fun Project.configureBuildTypes(
 ) {
     commonExtension.apply {
         buildTypes {
-            getByName("release") {
-                isMinifyEnabled = false
+      /*      getByName("release") {
+                isMinifyEnabled = true
                 proguardFiles(
                     getDefaultProguardFile("proguard-android-optimize.txt"),
                     "proguard-rules.pro"
                 )
+            }*/
+            getByName("debug") {
+                isMinifyEnabled = false
+                buildConfigField("String", "BASE_URL", "\"https://raw.githubusercontent.com/\"")
+                buildConfigField("Boolean", "DEVELOPMENT_MODE", "true")
             }
         }
     }

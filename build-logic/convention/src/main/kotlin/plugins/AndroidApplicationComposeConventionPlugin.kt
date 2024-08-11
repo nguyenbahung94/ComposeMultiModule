@@ -4,7 +4,6 @@ import com.android.build.api.dsl.ApplicationExtension
 import extensions.configureAndroidCompose
 import extensions.configureBuildTypes
 import extensions.libs
-import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -23,10 +22,6 @@ class AndroidApplicationComposeConventionPlugin : Plugin<Project> {
                     minSdk = libs.findVersion("minSdk").get().toString().toInt()
                 }
 
-                compileOptions {
-                    sourceCompatibility = JavaVersion.VERSION_1_8
-                    targetCompatibility = JavaVersion.VERSION_1_8
-                }
                 configureAndroidCompose(this)
                 configureBuildTypes(this)
             }

@@ -7,7 +7,6 @@ plugins {
 android {
     namespace = libs.plugins.listNameSpace.get().toString()
 }
-
 dependencies {
     implementation(projects.core)
     implementation(projects.network)

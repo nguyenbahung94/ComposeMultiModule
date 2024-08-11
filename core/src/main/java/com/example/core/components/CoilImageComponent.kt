@@ -19,7 +19,6 @@ fun CoilImageComponent(
     val imageModifier = modifier.then(
         if (onClick != null) Modifier.clickable { onClick.invoke() } else Modifier
     ).fillMaxSize()
-
     Image(
         painter = rememberAsyncImagePainter(imageUrl),
         contentDescription = contentDescription,

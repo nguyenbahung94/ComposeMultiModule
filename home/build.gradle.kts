@@ -26,4 +26,7 @@ dependencies {
     implementation(libs.coil)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.ui.tooling)
+    implementation(libs.compose.ui.util)
+    implementation(libs.compose.ui.text)
+    implementation(libs.compose.foundations)
 }

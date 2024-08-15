@@ -53,7 +53,13 @@ compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 compose-ui-material = { group = "androidx.compose.material3", name = "material3", version.ref = "composeMaterial" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+compose-foundations = { group = "androidx.compose.foundation", name = "foundation" }
 compose-ui = { group = "androidx.compose.ui", name = "ui" }
+compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
+compose-ui-text = { group = "androidx.compose.ui", name = "ui-text" }
+compose-ui-animation = { group = "androidx.compose.ui", name = "ui-animation" }
+compose-ui-util-android = { group = "androidx.compose.ui", name = "ui-util-android" }
+compose-ui-android = { group = "androidx.compose.ui", name = "ui-android" }
 compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 compose-material-icon-core = { group = "androidx.compose.material", name = "material-icons-core"}

@@ -9,7 +9,7 @@ import androidx.navigation.navigation
 @Immutable
 data class DetailScreens(
     val detailMain: @Composable () -> Unit,
-    val destination: @Composable () -> Unit,
+    val detailSearch: @Composable () -> Unit,
 )
 
 internal fun NavGraphBuilder.detailGraph(
@@ -23,7 +23,7 @@ internal fun NavGraphBuilder.detailGraph(
             screens.detailMain()
         }
         composable(DetailSearch.route) {
-            screens.destination()
+            screens.detailSearch()
         }
     }
 }

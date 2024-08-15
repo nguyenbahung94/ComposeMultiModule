@@ -1,4 +1,4 @@
-package com.example.home.components
+package com.example.home.presentation.components
 
 import android.widget.Toast
 import androidx.compose.foundation.clickable
@@ -19,7 +19,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.core.components.CoilImageComponent
-import com.example.home.data.model.ProductItem
+import com.example.home.domain.model.ProductItem
 
 @Composable
 fun VerticalItemCard(

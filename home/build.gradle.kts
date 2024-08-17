@@ -7,6 +7,16 @@ plugins {
 android {
     namespace = libs.plugins.homeNameSpace.get().toString()
 }
+
+tasks.register("listPlugins") {
+    doLast {
+        println("Applied plugins in ${project.name}:")
+        project.plugins.forEach {
+            println("name:"+ it.javaClass.simpleName)
+        }
+    }
+}
+
 dependencies {
     implementation(projects.core)
     implementation(projects.network)

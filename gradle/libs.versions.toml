@@ -33,6 +33,7 @@ coroutines = "1.8.0"
 lifecycle-viewmodel = "2.8.4"
 compose-paging = "3.2.1"
 compose-lottie = "4.2.2"
+detekt = "1.23.1"
 
 
 [libraries]
@@ -82,6 +83,8 @@ lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmode
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 junit-ext = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+detekt-gradlePlugin = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
+detekt-formatting = { group = "io.gitlab.arturbosch.detekt", name = "detekt-formatting", version.ref = "detekt"}
 
 
 [plugins]
@@ -98,10 +101,12 @@ homeNameSpace = { id = "com.example.home" }
 daggerHilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "org-jetbrains-kotlin-jvm" }
+android-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt"}
 
 
 # Plugins defined by this project
 composeln-application = { id = "composeln.application", version = "unspecified" }
-composeln-hilt = { id = "composeln.hilt",version = "unspecified"}
-composeln-kotlin-android = { id = "composeln.kotlin.android",version = "unspecified"}
-composeln-library = { id = "composeln.library",version = "unspecified"}
+composeln-hilt = { id = "composeln.hilt", version = "unspecified"}
+composeln-kotlin-android = { id = "composeln.kotlin.android", version = "unspecified"}
+composeln-library = { id = "composeln.library", version = "unspecified"}
+composeln-detekt = { id = "composeln.detekt", version = "unspecified"}

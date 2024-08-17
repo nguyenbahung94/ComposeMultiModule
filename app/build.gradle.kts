@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.composeln.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.composeln.hilt)
+    alias(libs.plugins.composeln.detekt)
 }
 
 android {

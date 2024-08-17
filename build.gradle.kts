@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.daggerHilt) apply false
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.org.jetbrains.kotlin.jvm) apply false
+    alias(libs.plugins.android.detekt) apply false
 }
 
 task("clean") {

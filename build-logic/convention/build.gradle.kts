@@ -15,6 +15,8 @@ java {
 dependencies {
     implementation(libs.build.gradle.plugin)
     implementation(libs.kotlin.gradle.plugin)
+    compileOnly(libs.detekt.gradlePlugin)
+    compileOnly(libs.detekt.formatting)
 }
 
 gradlePlugin {
@@ -34,6 +36,10 @@ gradlePlugin {
         register("androidKotlin") {
             id = "composeln.kotlin.android"
             implementationClass = "plugins.AndroidKotlinConventionPlugin"
+        }
+        register("androidDetekt") {
+            id = "composeln.detekt"
+            implementationClass = "plugins.AndroidDetektConventionPlugin"
         }
     }
 }

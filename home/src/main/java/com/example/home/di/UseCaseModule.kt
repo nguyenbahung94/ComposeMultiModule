@@ -1,6 +1,5 @@
 package com.example.home.di
 
-import com.example.core.di.CoroutineModule
 import com.example.home.data.datasource.RemoteDataSource
 import com.example.home.data.domaincontract.repository.GetCountNotificationHomeUseCaseImpl
 import com.example.home.data.domaincontract.repository.GetInitialHomeUseCaseImpl

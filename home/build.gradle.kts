@@ -13,8 +13,8 @@ dependencies {
 
     // data dependencies
     implementation(libs.okhttp.logging.interceptor)
-    implementation(libs.hilt.core)
     implementation(libs.retrofit.core)
+    implementation(libs.retrofit.gson.converter)
 
     // presentation dependencies
     implementation(platform(libs.compose.bom))

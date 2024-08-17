@@ -1,6 +1,5 @@
 package com.example.home.presentation.sections
 
-import android.util.Log
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -37,19 +36,18 @@ fun BannerSection(
         count = bannerItems.size,
         state = pagerStage,
         modifier = Modifier
-            .padding(20.dp)
+            .padding(10.dp)
             .height(200.dp)
             .fillMaxWidth()
     ) { page ->
-        Log.e("HorizontalPager", "BannerSection, page = $page")
         val bannerItem = bannerItems[page]
         CoilImageComponent(
             imageUrl = bannerItem.image,
-            contentScale = ContentScale.FillBounds,
+            contentScale = ContentScale.Fit,
             contentDescription = "Banner Image",
             onClick = {
                 bannerItem.navigationData.run {
-                  onBannerClicked(HomeUIEvent.OnBannerClicked)
+                    onBannerClicked(HomeUIEvent.OnBannerClicked)
                 }
             }
         )

@@ -12,9 +12,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.core.components.ErrorComponent
+import com.example.core.components.LoadingComponent
 import com.example.home.presentation.components.DetailBottomSheet
+import com.example.home.presentation.components.HomeScreenContent
 import com.example.home.presentation.uievent.HomeUIEvent
 import kotlinx.coroutines.launch
+import javax.annotation.meta.When
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -44,6 +48,17 @@ fun HomeScreen() {
             state.selectedProductItem?.let {
                 DetailBottomSheet(productItem = it)
             }
+        }
+    }
+
+    when {
+        state.isLoading -> LoadingComponent()
+        state.error != null -> ErrorComponent(state.error)
+        state.homeData != null -> {
+            HomeScreenContent(
+                homeData = state.homeData!!,
+                onEvent = viewModel::onEvent
+            )
         }
     }
 }

@@ -93,7 +93,7 @@ fun HorizontalCard(
                     color = Color.Black,
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Left,
-                    modifier =textModifier.align(Alignment.Start)
+                    modifier = textModifier.align(Alignment.Start)
                 )
             }
             subtitle?.let {

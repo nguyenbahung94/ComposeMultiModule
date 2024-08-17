@@ -44,7 +44,7 @@ class NetWorkModule {
     fun provideLoggingInterceptor(): HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = if (BuildConfig.DEVELOPMENT_MODE) {
-            HttpLoggingInterceptor.Level.BODY
+            HttpLoggingInterceptor.Level.BASIC
         } else {
             HttpLoggingInterceptor.Level.NONE
         }

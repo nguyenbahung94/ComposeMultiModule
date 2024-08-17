@@ -26,6 +26,10 @@ android {
     }
 
     namespace = libs.plugins.mainNameSpace.get().toString()
+
+    hilt {
+        enableAggregatingTask = true
+    }
 }
 
 kotlin {
@@ -62,10 +66,6 @@ dependencies {
     implementation(libs.compose.runtime)
     implementation(libs.compose.navigation)
     implementation(libs.compose.paging)
-
-    // D.I Dependencies
-    ksp(libs.hilt.compiler)
-    implementation(libs.hilt.core)
 
     // core Dependencies
     implementation(libs.androidx.core.ktx)

@@ -11,7 +11,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ComposeMultiModules" >
+        android:theme="@style/Theme.ComposeMultiModules"
+        android:name="com.example.composemultimodules.MainApplication">
         <activity android:name="com.example.composemultimodules.SingleActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

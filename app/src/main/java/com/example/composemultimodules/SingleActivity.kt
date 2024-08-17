@@ -8,6 +8,7 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.composemultimodules.ui.theme.ComposeFeatureBaseMultiModuleTheme
+import com.example.home.presentation.HomeScreen
 import com.example.navigation.AppNavigation
 import com.example.navigation.Navigator
 import com.example.navigation.graph.DetailScreens
@@ -27,10 +28,7 @@ class SingleActivity : ComponentActivity() {
                 AppNavigation(
                     navigator = navigator,
                     homeScreen = {
-                        Text(
-                            text = "Home Screen",
-                            modifier = Modifier.padding(16.dp)
-                        )
+                        HomeScreen()
                     },
                     listScreen = {
                         Text(
@@ -45,8 +43,18 @@ class SingleActivity : ComponentActivity() {
                         )
                     },
                     detailScreenWithGraph = DetailScreens(
-                        detailMain = {},
-                        detailSearch = {}
+                        detailMain = {
+                            Text(
+                                text = "Detail Screen",
+                                modifier = Modifier.padding(16.dp)
+                            )
+                        },
+                        detailSearch = {
+                            Text(
+                                text = "Detail Search Screen",
+                                modifier = Modifier.padding(16.dp)
+                            )
+                        }
                     )
                 )
             }

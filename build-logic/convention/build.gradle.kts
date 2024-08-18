@@ -13,10 +13,10 @@ java {
     }
 }
 dependencies {
-    implementation(libs.build.gradle.plugin)
-    implementation(libs.kotlin.gradle.plugin)
+    compileOnly(libs.build.gradle.plugin)
+    compileOnly(libs.kotlin.gradle.plugin)
     compileOnly(libs.detekt.gradlePlugin)
-    compileOnly(libs.detekt.formatting)
+    compileOnly(libs.ktlint.kotlinter)
 }
 
 gradlePlugin {
@@ -40,6 +40,14 @@ gradlePlugin {
         register("androidDetekt") {
             id = "composeln.detekt"
             implementationClass = "plugins.AndroidDetektConventionPlugin"
+        }
+        register("androidKtlint") {
+            id = "composeln.ktlint"
+            implementationClass = "plugins.AndroidKotlinterConventionPlugin"
+        }
+        register("androiFeature") {
+            id = "composeln.feature"
+            implementationClass = "plugins.AndroidFeatureConventionPlugin"
         }
     }
 }

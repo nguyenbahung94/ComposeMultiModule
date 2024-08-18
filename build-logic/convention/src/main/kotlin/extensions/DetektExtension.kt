@@ -12,14 +12,12 @@ internal fun Project.configureDetekt(extension: DetektExtension) = extension.app
             xml.required.set(true)
             html.required.set(true)
             txt.required.set(true)
-            sarif.required.set(true)
-            md.required.set(true)
         }
     }
     toolVersion = libs.findVersion("detekt").get().toString()
     source.setFrom("src/main/java", "src/main/kotlin")
+    autoCorrect = true
     config.setFrom(files("$rootDir/config/detekt/detekt.yml"))
-    parallel = false
     dependencies {
         "detektPlugins"(libs.findLibrary("detekt-formatting").get())
     }

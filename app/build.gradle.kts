@@ -36,6 +36,7 @@ android {
 kotlin {
     jvmToolchain(17)
 }
+
 dependencies {
     implementation(projects.navigation)
     implementation(projects.core)
@@ -55,14 +56,11 @@ dependencies {
     implementation(libs.lifecycle.viewmodel)
 
     // Compose Dependencies
+    libs.apply {
+        implementation(bundles.compose)
+    }
     implementation(libs.compose.activity)
     implementation(platform(libs.compose.bom))
-    implementation(libs.compose.ui)
-    implementation(libs.compose.ui.graphics)
-    implementation(libs.compose.ui.tooling)
-    implementation(libs.compose.ui.material)
-    implementation(libs.compose.ui.tooling)
-    implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material.icon.core)
     implementation(libs.compose.runtime)
     implementation(libs.compose.navigation)

@@ -1,42 +1,19 @@
 plugins {
-    alias(libs.plugins.composeln.library)
-    alias(libs.plugins.composeln.kotlin.android)
-    alias(libs.plugins.composeln.hilt)
+    alias(libs.plugins.composeln.feature)
 }
 
 android {
     namespace = libs.plugins.homeNameSpace.get().toString()
 }
 
-tasks.register("listPlugins") {
-    doLast {
-        println("Applied plugins in ${project.name}:")
-        project.plugins.forEach {
-            println("name:"+ it.javaClass.simpleName)
-        }
-    }
-}
-
 dependencies {
-    implementation(projects.core)
-    implementation(projects.network)
-
-    // data dependencies
-    implementation(libs.okhttp.logging.interceptor)
-    implementation(libs.retrofit.core)
-    implementation(libs.retrofit.gson.converter)
-
     // presentation dependencies
+    libs.apply {
+        implementation(bundles.compose)
+        implementation(bundles.retrofit)
+    }
     implementation(platform(libs.compose.bom))
     implementation(libs.compose.hilt.navigation)
-    implementation(libs.compose.ui.graphics)
     implementation(libs.pager)
-    implementation(libs.compose.ui.material)
-    implementation(libs.compose.activity)
     implementation(libs.coil)
-    implementation(libs.compose.ui.tooling.preview)
-    implementation(libs.compose.ui.tooling)
-    implementation(libs.compose.ui.util)
-    implementation(libs.compose.ui.text)
-    implementation(libs.compose.foundations)
 }

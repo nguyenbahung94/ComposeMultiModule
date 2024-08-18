@@ -13,6 +13,8 @@ material = "1.12.0"
 hilt = "2.51"
 okhttp = "4.11.0"
 retrofit = "2.9.0"
+kotlinx-serialization = "1.6.0"
+kotlinx-serialization-converter = "1.0.0"
 lifecycleRuntimeKtx = "2.8.4"
 composeActivity = "1.9.1"
 composeHiltNav = "1.2.0"
@@ -34,6 +36,7 @@ lifecycle-viewmodel = "2.8.4"
 compose-paging = "3.2.1"
 compose-lottie = "4.2.2"
 detekt = "1.23.1"
+kotlinter = "3.16.0"
 
 
 [libraries]
@@ -48,6 +51,8 @@ hilt-testing = { group = "com.google.dagger", name = "hilt-android-testing", ver
 okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-gson-converter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+kotlinx-serialization-converter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "kotlinx-serialization-converter" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
 compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "composeActivity" }
 compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
 pager = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "pager" }
@@ -65,6 +70,7 @@ compose-ui-android = { group = "androidx.compose.ui", name = "ui-android" }
 compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 compose-material-icon-core = { group = "androidx.compose.material", name = "material-icons-core"}
+compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 compose-runtime = { group = "androidx.compose.runtime", name = "runtime-livedata"}
 compose-paging = { group = "androidx.paging", name = "paging-compose", version.ref = "compose-paging" }
 compose-lottie = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "compose-lottie" }
@@ -85,6 +91,7 @@ junit-ext = { group = "androidx.test.ext", name = "junit", version.ref = "junitV
 espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 detekt-gradlePlugin = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
 detekt-formatting = { group = "io.gitlab.arturbosch.detekt", name = "detekt-formatting", version.ref = "detekt"}
+ktlint-kotlinter = { group = "org.jmailen.gradle", name = "kotlinter-gradle", version.ref = "kotlinter" }
 
 
 [plugins]
@@ -100,9 +107,11 @@ navigationNameSpace = { id = "com.example.navigation" }
 homeNameSpace = { id = "com.example.home" }
 daggerHilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "org-jetbrains-kotlin-jvm" }
-android-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt"}
-
+android-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+android-kotliner = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
 
 # Plugins defined by this project
 composeln-application = { id = "composeln.application", version = "unspecified" }
@@ -110,3 +119,24 @@ composeln-hilt = { id = "composeln.hilt", version = "unspecified"}
 composeln-kotlin-android = { id = "composeln.kotlin.android", version = "unspecified"}
 composeln-library = { id = "composeln.library", version = "unspecified"}
 composeln-detekt = { id = "composeln.detekt", version = "unspecified"}
+composeln-feature = { id = "composeln.feature", version = "unspecified"}
+
+
+[bundles]
+compose = [
+    "compose-ui",
+    "compose-ui-tooling-preview",
+    "compose-ui-tooling",
+    "compose-ui-test-manifest",
+    "compose-ui-material",
+    "compose-ui-util",
+    "compose-ui-text",
+    "compose-foundations",
+    "compose-activity",
+    "compose-ui-graphics"
+]
+
+retrofit = [
+    "retrofit-core",
+    "retrofit-gson-converter"
+]

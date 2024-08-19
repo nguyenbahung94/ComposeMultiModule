@@ -24,10 +24,11 @@ fun DetailBottomSheet(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp), contentAlignment = Alignment.Center
+            .padding(16.dp),
+        contentAlignment = Alignment.Center,
     ) {
         Column(
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             CoilImageComponent(
                 imageUrl = productItem.productImage,
@@ -35,14 +36,14 @@ fun DetailBottomSheet(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(300.dp)
-                    .clip(shape = RoundedCornerShape(10.dp))
+                    .clip(shape = RoundedCornerShape(10.dp)),
             )
             Spacer(modifier = Modifier.height(16.dp))
             productItem.text?.let {
                 Text(
                     text = it,
                     style = MaterialTheme.typography.headlineLarge,
-                    color = MaterialTheme.colorScheme.secondaryContainer
+                    color = MaterialTheme.colorScheme.secondaryContainer,
                 )
             }
             Spacer(modifier = Modifier.height(8.dp))
@@ -50,7 +51,7 @@ fun DetailBottomSheet(
                 Text(
                     text = it,
                     style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
+                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
                 )
             }
             Spacer(modifier = Modifier.height(8.dp))

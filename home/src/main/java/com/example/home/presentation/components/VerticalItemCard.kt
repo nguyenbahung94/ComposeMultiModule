@@ -1,7 +1,6 @@
 package com.example.home.presentation.components
 
 import android.widget.Toast
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -16,8 +15,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -28,7 +25,7 @@ import com.example.home.domain.model.ProductItem
 @Composable
 fun VerticalItemCard(
     item: ProductItem,
-    onItemClicked: (ProductItem) -> Unit
+    onItemClicked: (ProductItem) -> Unit,
 ) {
     val cardModifier = remember {
         Modifier
@@ -42,13 +39,13 @@ fun VerticalItemCard(
     }
 
     val textModifier = remember {
-        Modifier.padding(start =8.dp)
+        Modifier.padding(start = 8.dp)
             .fillMaxWidth()
     }
 
     Card(
         modifier = cardModifier,
-        elevation = CardDefaults.cardElevation(defaultElevation = 5.dp)
+        elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -57,11 +54,11 @@ fun VerticalItemCard(
                 imageUrl = item.productImage,
                 contentDescription = "product image",
                 modifier = imageModifier,
-                contentScale = ContentScale.FillBounds
+                contentScale = ContentScale.FillBounds,
             )
             Column(
                 modifier = Modifier.padding(8.dp)
-                    .fillMaxWidth()
+                    .fillMaxWidth(),
             ) {
                 item.text?.let {
                     Text(
@@ -76,7 +73,7 @@ fun VerticalItemCard(
                         text = it,
                         modifier = textModifier,
                         style = MaterialTheme.typography.bodyMedium,
-                        textAlign = TextAlign.Start
+                        textAlign = TextAlign.Start,
                     )
                 }
             }
@@ -98,9 +95,9 @@ fun displayProductItem() {
             rating = null,
             share = null,
             piece = null,
-            soldOutText = null
+            soldOutText = null,
 
-        )
+        ),
     ) {
         Toast.makeText(null, "Item clicked", Toast.LENGTH_SHORT).show()
     }

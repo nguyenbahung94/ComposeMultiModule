@@ -50,14 +50,14 @@ fun HomeScreen() {
             }
         }
     }
-    Log.e("homeScreen","state is: $state")
+    Log.e("homeScreen", "state is: $state")
     when {
         state.isLoading -> LoadingComponent()
         state.error != null -> ErrorComponent(state.error)
         state.homeData != null -> {
             HomeScreenContent(
                 homeData = state.homeData!!,
-                onEvent = viewModel::onEvent
+                onEvent = viewModel::onEvent,
             )
         }
     }

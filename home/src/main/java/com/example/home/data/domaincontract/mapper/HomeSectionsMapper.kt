@@ -17,33 +17,13 @@ fun HomeResponse.mapToHomeSections(): HomeSection {
             4 -> HomeSectionItem.VIEW_TYPE_VERTICAL_PRODUCTS
             else -> -1
         }
-        fun mapHomeSectionToBannerItem(homeSection: HomeSectionResponse): BannerItem {
-            return BannerItem(
-                image = homeSection.image,
-                navigationData = homeSection.navigationData
-            )
-        }
-        fun mapToProductItem(response: HomeSectionResponse): ProductItem {
-            return ProductItem(
-                productId = response.productId,
-                productImage = response.productImage,
-                text = response.text,
-                subText = response.subText,
-                review = response.review,
-                questions = response.questions,
-                rating = response.rating,
-                share = response.share,
-                piece = response.piece,
-                soldOutText = response.soldOutText
-            )
-        }
 
         val sectionItem = when (viewType) {
             HomeSectionItem.VIEW_TYPE_BANNER -> HomeSectionItem.Banner(
                 viewType = viewType,
                 bannerItem = section.sectionData.map { banner ->
                     mapHomeSectionToBannerItem(banner)
-                }
+                },
             )
             HomeSectionItem.VIEW_TYPE_SLIDE_BAR_PRODUCTS -> HomeSectionItem.SlideBarProject(
                 viewType = viewType,
@@ -51,7 +31,7 @@ fun HomeResponse.mapToHomeSections(): HomeSection {
                     mapToProductItem(it)
                 },
                 sectionTitle = section.sectionTitle ?: "",
-                id = section.id
+                id = section.id,
             )
             HomeSectionItem.VIEW_TYPE_VERTICAL_PRODUCTS -> HomeSectionItem.VerticalProducts(
                 viewType = viewType,
@@ -59,7 +39,7 @@ fun HomeResponse.mapToHomeSections(): HomeSection {
                     mapToProductItem(it)
                 },
                 sectionTitle = section.sectionTitle ?: "",
-                id = section.id
+                id = section.id,
             )
             else -> null
         }
@@ -67,4 +47,26 @@ fun HomeResponse.mapToHomeSections(): HomeSection {
     }
 
     return HomeSection(sectionItems = homeSectionsItems)
+}
+
+fun mapHomeSectionToBannerItem(homeSection: HomeSectionResponse): BannerItem {
+    return BannerItem(
+        image = homeSection.image,
+        navigationData = homeSection.navigationData,
+    )
+}
+
+fun mapToProductItem(response: HomeSectionResponse): ProductItem {
+    return ProductItem(
+        productId = response.productId,
+        productImage = response.productImage,
+        text = response.text,
+        subText = response.subText,
+        review = response.review,
+        questions = response.questions,
+        rating = response.rating,
+        share = response.share,
+        piece = response.piece,
+        soldOutText = response.soldOutText,
+    )
 }

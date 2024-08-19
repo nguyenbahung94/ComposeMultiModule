@@ -24,4 +24,3 @@ done
 
 echo "Completed ktlint hook."
 ######## KTLINT-GRADLE HOOK END ########
-

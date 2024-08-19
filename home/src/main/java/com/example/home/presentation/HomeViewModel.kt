@@ -17,7 +17,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val getInitialHomeUseCase: GetInitialHomeUseCase,
-    private val navigator: NavigationService
+    private val navigator: NavigationService,
 ) : StateAndEventViewModel<HomeUIState, HomeUIEvent>(HomeUIState()) {
     override suspend fun handleEvent(event: HomeUIEvent) {
         when (event) {
@@ -78,7 +78,7 @@ class HomeViewModel @Inject constructor(
                             homeData = homeSection,
                             isLoading = false,
                             error = null,
-                            selectedProductItem = null
+                            selectedProductItem = null,
                         )
                     }
                 }

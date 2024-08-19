@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class HomeResponse(
     @SerializedName("sections")
-    val sections: List<Section>
+    val sections: List<Section>,
 )
 
 data class Section(
@@ -12,7 +12,7 @@ data class Section(
     val sectionData: List<HomeSectionResponse>,
     val sectionTitle: String? = null,
     val type: Int,
-    val id: Int
+    val id: Int,
 )
 
 data class HomeSectionResponse(
@@ -28,5 +28,5 @@ data class HomeSectionResponse(
     val subText: String? = null,
     val text: String? = null,
     val piece: String? = null,
-    val soldOutText: String? = null
+    val soldOutText: String? = null,
 )

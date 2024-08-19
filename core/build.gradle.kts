@@ -6,6 +6,9 @@ plugins {
 
 android {
     namespace = libs.plugins.coreNameSpace.get().toString()
+    buildFeatures {
+        buildConfig = true
+    }
 }
 dependencies {
     implementation(libs.retrofit.core)

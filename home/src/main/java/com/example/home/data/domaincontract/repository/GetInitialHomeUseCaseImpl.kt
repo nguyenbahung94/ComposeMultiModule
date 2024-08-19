@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 internal class GetInitialHomeUseCaseImpl @Inject constructor(
     private val dataSource: RemoteDataSource,
-    private val dispatcher: CoroutineDispatcher
+    private val dispatcher: CoroutineDispatcher,
 ) : GetInitialHomeUseCase {
     override fun getInitialHome(): Flow<HomeSection> =
         flow {

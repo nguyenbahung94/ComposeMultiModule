@@ -19,6 +19,6 @@ fun SectionTitle(title: String) {
         style = MaterialTheme.typography.bodyLarge,
         modifier = Modifier
             .padding(12.dp)
-            .fillMaxWidth()
+            .fillMaxWidth(),
     )
 }

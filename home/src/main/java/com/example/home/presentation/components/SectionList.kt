@@ -14,14 +14,14 @@ import com.example.home.presentation.uievent.HomeUIEvent
 @Composable
 fun SectionList(
     sections: List<HomeSectionItem>?,
-    onEvent: (HomeUIEvent) -> Unit
+    onEvent: (HomeUIEvent) -> Unit,
 ) {
     sections?.let {
         LazyColumn {
             items(sections, key = { sectionItem ->
                 when (sectionItem) {
                     is HomeSectionItem.Banner -> "Banner - ${sectionItem.bannerItem.joinToString(
-                        "-"
+                        "-",
                     ){it.navigationData}}"
                     is HomeSectionItem.SlideBarProject -> "Slideble - ${sectionItem.id}"
                     is HomeSectionItem.VerticalProducts -> "Vertical - ${sectionItem.sectionTitle}"
@@ -30,18 +30,18 @@ fun SectionList(
                 when (section) {
                     is HomeSectionItem.Banner -> BannerSection(
                         bannerItems = section.bannerItem,
-                        onEvent
+                        onEvent,
                     )
 
                     is HomeSectionItem.SlideBarProject -> SlidableSection(
                         productItems = section.productItem,
                         sectionTitle = section.sectionTitle,
-                        onEvent
+                        onEvent,
                     )
 
                     is HomeSectionItem.VerticalProducts -> VerticalSection(
                         section = section,
-                        onEvent
+                        onEvent,
                     )
                 }
             }
@@ -52,14 +52,14 @@ fun SectionList(
 @Composable
 fun VerticalSection(
     section: HomeSectionItem.VerticalProducts,
-    onEvent: (HomeUIEvent) -> Unit
+    onEvent: (HomeUIEvent) -> Unit,
 ) {
     SectionTitle(title = section.sectionTitle)
     val products = remember { section.productItem }
     products.forEach { productItem ->
         VerticalItemCard(
             item = productItem,
-            onItemClicked = { onEvent(HomeUIEvent.OnVerticalProductClicked(productItem)) }
+            onItemClicked = { onEvent(HomeUIEvent.OnVerticalProductClicked(productItem)) },
         )
     }
 }
@@ -71,8 +71,8 @@ fun TestVerticalSection() {
         section = HomeSectionItem.VerticalProducts(
             productItem = emptyList(),
             sectionTitle = "Vertical Products",
-            id = 1
+            id = 1,
         ),
-        onEvent = {}
+        onEvent = {},
     )
 }

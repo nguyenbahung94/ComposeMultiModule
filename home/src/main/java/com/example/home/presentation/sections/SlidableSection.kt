@@ -29,7 +29,7 @@ import com.example.home.presentation.uievent.HomeUIEvent
 fun SlidableSection(
     productItems: List<ProductItem>,
     sectionTitle: String,
-    onProductClicked: (HomeUIEvent) -> Unit
+    onProductClicked: (HomeUIEvent) -> Unit,
 ) {
     Column {
         SectionTitle(title = sectionTitle)
@@ -41,7 +41,7 @@ fun SlidableSection(
                     imageUrl = product.productImage,
                     title = product.text,
                     subtitle = product.subText,
-                    onClick = { onProductClicked(HomeUIEvent.OnProductClicked) }
+                    onClick = { onProductClicked(HomeUIEvent.OnProductClicked) },
                 )
             }
         }
@@ -53,7 +53,7 @@ fun HorizontalCard(
     imageUrl: String,
     title: String?,
     subtitle: String?,
-    onClick: () -> Unit
+    onClick: () -> Unit,
 ) {
     val cardModifier = remember {
         Modifier
@@ -72,11 +72,11 @@ fun HorizontalCard(
     Card(
         modifier = cardModifier,
         elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
-        shape = RoundedCornerShape(10.dp)
+        shape = RoundedCornerShape(10.dp),
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(8.dp)
+            modifier = Modifier.padding(8.dp),
         ) {
             CoilImageComponent(
                 imageUrl = imageUrl,
@@ -84,7 +84,7 @@ fun HorizontalCard(
                 modifier = Modifier
                     .size(100.dp)
                     .padding(8.dp)
-                    .align(Alignment.CenterHorizontally)
+                    .align(Alignment.CenterHorizontally),
             )
 
             title?.let {
@@ -93,7 +93,7 @@ fun HorizontalCard(
                     color = Color.Black,
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Left,
-                    modifier = textModifier.align(Alignment.Start)
+                    modifier = textModifier.align(Alignment.Start),
                 )
             }
             subtitle?.let {
@@ -101,7 +101,7 @@ fun HorizontalCard(
                     text = it,
                     color = Color.Gray,
                     textAlign = TextAlign.Left,
-                    modifier = textModifier.align(Alignment.Start)
+                    modifier = textModifier.align(Alignment.Start),
                 )
             }
         }
@@ -123,7 +123,7 @@ fun testSlidableSection() {
                 rating = null,
                 share = null,
                 piece = null,
-                soldOutText = null
+                soldOutText = null,
             ),
             ProductItem(
                 productId = "2",
@@ -135,9 +135,9 @@ fun testSlidableSection() {
                 rating = null,
                 share = null,
                 piece = null,
-                soldOutText = null
+                soldOutText = null,
             ),
         ),
-        sectionTitle = "Products"
+        sectionTitle = "Products",
     ) {}
 }

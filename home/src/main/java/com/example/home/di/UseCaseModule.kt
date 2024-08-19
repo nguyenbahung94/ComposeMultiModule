@@ -27,20 +27,20 @@ object UseCaseModule {
     @Provides
     fun provideGetInitialHomeUseCase(
         dataSource: RemoteDataSource,
-        dispatcher: CoroutineDispatcher
+        dispatcher: CoroutineDispatcher,
     ): GetInitialHomeUseCase = GetInitialHomeUseCaseImpl(dataSource, dispatcher)
 
     @Provides
     @Singleton
     fun provideGetTitleHomeUseCase(
         dataSource: RemoteDataSource,
-        dispatcher: CoroutineDispatcher
+        dispatcher: CoroutineDispatcher,
     ): GetTitleHomeUseCase = GetTitleHomeUseCaseImpl(dataSource, dispatcher)
 
     @Provides
     @Singleton
     fun provideGetCountNotificationHomeUseCase(
         dataSource: RemoteDataSource,
-        dispatcher: CoroutineDispatcher
+        dispatcher: CoroutineDispatcher,
     ): GetCountNotificationHomeUseCase = GetCountNotificationHomeUseCaseImpl(dataSource, dispatcher)
 }

@@ -1,9 +1,9 @@
 package com.example.home.di
 
 import com.example.home.data.datasource.RemoteDataSource
-import com.example.home.data.domaincontract.repository.GetCountNotificationHomeUseCaseImpl
-import com.example.home.data.domaincontract.repository.GetInitialHomeUseCaseImpl
-import com.example.home.data.domaincontract.repository.GetTitleHomeUseCaseImpl
+import com.example.home.data.domaincontract.usecase.GetCountNotificationHomeUseCaseImpl
+import com.example.home.data.domaincontract.usecase.GetInitialHomeUseCaseImpl
+import com.example.home.data.domaincontract.usecase.GetTitleHomeUseCaseImpl
 import com.example.home.domain.usecase.GetCountNotificationHomeUseCase
 import com.example.home.domain.usecase.GetInitialHomeUseCase
 import com.example.home.domain.usecase.GetTitleHomeUseCase
@@ -12,16 +12,11 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object UseCaseModule {
-
-    @Provides
-    @Singleton
-    fun provideIODispatcher(): CoroutineDispatcher = Dispatchers.IO
 
     @Singleton
     @Provides

@@ -21,3 +21,4 @@ java_pid50413.hprof
 debug\
 release\
 /*/*/build
+.idea/deploymentTargetSelector.xml

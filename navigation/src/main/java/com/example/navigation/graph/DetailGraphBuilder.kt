@@ -19,10 +19,10 @@ internal fun NavGraphBuilder.detailGraph(
         startDestination = DetailGraph.startDestination,
         route = DetailGraph.route
     ) {
-        composable(DetailMain.route) {
+        composable(DetailGraph.detailMain.route) {
             screens.detailMain()
         }
-        composable(DetailSearch.route) {
+        composable(DetailGraph.detailSearch.route) {
             screens.detailSearch()
         }
     }

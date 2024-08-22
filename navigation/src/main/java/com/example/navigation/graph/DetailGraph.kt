@@ -8,6 +8,6 @@ object DetailGraph : NavigationGraph {
     override val startDestination: String
         get() = detailMain.destination(Unit)
 
-    private val detailMain = DetailMain
-    private val detailSearch = DetailSearch
+    val detailMain = DetailMain
+    val detailSearch = DetailSearch
 }

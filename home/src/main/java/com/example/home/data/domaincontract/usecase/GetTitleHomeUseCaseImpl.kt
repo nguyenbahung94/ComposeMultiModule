@@ -1,4 +1,4 @@
-package com.example.home.data.domaincontract.repository
+package com.example.home.data.domaincontract.usecase
 
 import com.example.core.utils.Constants.VALUE_100
 import com.example.home.data.datasource.RemoteDataSource

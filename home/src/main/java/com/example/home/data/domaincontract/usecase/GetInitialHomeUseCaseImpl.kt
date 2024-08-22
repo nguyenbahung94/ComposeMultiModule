@@ -1,4 +1,4 @@
-package com.example.home.data.domaincontract.repository
+package com.example.home.data.domaincontract.usecase
 
 import com.example.home.data.datasource.RemoteDataSource
 import com.example.home.data.domaincontract.mapper.mapToHomeSections

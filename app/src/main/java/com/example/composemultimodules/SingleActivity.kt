@@ -8,6 +8,7 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.composemultimodules.ui.theme.ComposeFeatureBaseMultiModuleTheme
+import com.example.detail.presentation.DetailScreen
 import com.example.home.presentation.HomeScreen
 import com.example.navigation.AppNavigation
 import com.example.navigation.Navigator
@@ -37,17 +38,11 @@ class SingleActivity : ComponentActivity() {
                         )
                     },
                     detailScreen = { isOpenSheet ->
-                        Text(
-                            text = "Detail Screen",
-                            modifier = Modifier.padding(16.dp)
-                        )
+                        DetailScreen()
                     },
                     detailScreenWithGraph = DetailScreens(
                         detailMain = {
-                            Text(
-                                text = "Detail Screen",
-                                modifier = Modifier.padding(16.dp)
-                            )
+                            DetailScreen()
                         },
                         detailSearch = {
                             Text(

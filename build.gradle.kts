@@ -11,7 +11,11 @@ plugins {
     alias(libs.plugins.android.detekt) apply false
     alias(libs.plugins.android.kotliner) apply false
 }
-
+allprojects {
+    tasks.withType<JavaCompile> {
+        options.compilerArgs.add("-parameters")
+    }
+}
 task("clean") {
     delete("projectDir/build")
 }

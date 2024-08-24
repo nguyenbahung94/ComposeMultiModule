@@ -10,6 +10,7 @@ plugins {
     alias(libs.plugins.org.jetbrains.kotlin.jvm) apply false
     alias(libs.plugins.android.detekt) apply false
     alias(libs.plugins.android.kotliner) apply false
+    alias(libs.plugins.compose.compiler) apply false
 }
 allprojects {
     tasks.withType<JavaCompile> {

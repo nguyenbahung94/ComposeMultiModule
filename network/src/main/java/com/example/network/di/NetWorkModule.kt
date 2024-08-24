@@ -1,7 +1,5 @@
 package com.example.network.di
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import com.example.core.BuildConfig
 import dagger.Module
 import dagger.Provides
@@ -32,7 +30,6 @@ object NetWorkModule {
         .client(okHttpClient)
         .build()
 
-    @RequiresApi(Build.VERSION_CODES.O)
     @Provides
     @Singleton
     fun provideHttpClient(

@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.composeln.library)
     alias(libs.plugins.composeln.kotlin.android)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -10,6 +11,11 @@ android {
         buildConfig = true
     }
 }
+
+kotlin {
+    jvmToolchain(17)
+}
+
 dependencies {
     implementation(libs.retrofit.core)
 

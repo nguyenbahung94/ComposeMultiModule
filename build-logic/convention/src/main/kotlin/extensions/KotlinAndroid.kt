@@ -5,7 +5,7 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 
 internal fun Project.configureAndroidKotlin(
-    extension: CommonExtension<*, *, *, *, *>,
+    extension: CommonExtension<*, *, *, *, *, *>,
 ) {
     with(extension) {
         compileSdk = libs.findVersion("compileSdk").get().toString().toInt()

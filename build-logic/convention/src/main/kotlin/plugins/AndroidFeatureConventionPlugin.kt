@@ -16,6 +16,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 apply("composeln.ktlint")
                 apply(libs.findPlugin("kotlin-parcelize").get().get().pluginId)
                 apply(libs.findPlugin("kotlin-serialization").get().get().pluginId)
+                apply(libs.findPlugin("compose-compiler").get().get().pluginId)
             }
 
             dependencies {

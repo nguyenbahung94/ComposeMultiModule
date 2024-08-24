@@ -6,6 +6,10 @@ android {
     namespace = libs.plugins.homeNameSpace.get().toString()
 }
 
+kotlin {
+    jvmToolchain(17)
+}
+
 dependencies {
     // presentation dependencies
     libs.apply {

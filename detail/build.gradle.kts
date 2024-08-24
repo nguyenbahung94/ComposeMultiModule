@@ -5,6 +5,11 @@ plugins {
 android {
     namespace = libs.plugins.detailNameSpace.get().toString()
 }
+
+kotlin {
+    jvmToolchain(17)
+}
+
 dependencies {
     // Presentation dependencies
     implementation(platform(libs.compose.bom))

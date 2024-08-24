@@ -85,4 +85,13 @@ class HomeViewModel @Inject constructor(
                 }
         }
     }
+
+    /* Route with arguments
+    private fun onProductClicked(isSheetOpen: Boolean) {
+        navigator.navigateTo( "detail/$isSheetOpen") {
+            launchSingleTop = true
+            restoreState = true
+        }
+    }
+     */
 }

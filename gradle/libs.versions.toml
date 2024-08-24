@@ -140,3 +140,8 @@ retrofit = [
     "retrofit-core",
     "retrofit-gson-converter"
 ]
+
+navigation = [
+    "compose-hilt-navigation",
+    "compose-navigation"
+]

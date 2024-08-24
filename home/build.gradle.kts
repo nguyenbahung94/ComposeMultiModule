@@ -11,9 +11,9 @@ dependencies {
     libs.apply {
         implementation(bundles.compose)
         implementation(bundles.retrofit)
+        implementation(bundles.navigation)
     }
     implementation(platform(libs.compose.bom))
-    implementation(libs.compose.hilt.navigation)
     implementation(libs.pager)
     implementation(libs.coil)
 }

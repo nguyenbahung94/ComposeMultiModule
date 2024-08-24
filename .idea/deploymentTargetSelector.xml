@@ -11,9 +11,6 @@
       <SelectionState runConfigName="SingleActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="displayProductItem">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
       <SelectionState runConfigName="TestVerticalSection">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>

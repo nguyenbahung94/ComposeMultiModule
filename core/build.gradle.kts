@@ -15,12 +15,11 @@ dependencies {
 
     // Presentation Dependencies
     implementation(platform(libs.compose.bom))
-    implementation(libs.compose.hilt.navigation)
-    implementation(libs.compose.ui)
-    implementation(libs.compose.ui.graphics)
-    implementation(libs.compose.navigation)
-    implementation(libs.compose.ui.material)
-    implementation(libs.compose.activity)
     implementation(libs.compose.runtime)
     implementation(libs.coil)
+
+    libs.apply {
+        implementation(bundles.compose)
+        implementation(bundles.navigation)
+    }
 }

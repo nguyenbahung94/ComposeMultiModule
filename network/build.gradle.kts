@@ -6,18 +6,6 @@ plugins {
 
 android {
     namespace = libs.plugins.networkNameSpace.get().toString()
-    compileSdk = libs.versions.compileSdk.get().toInt()
-
-    defaultConfig {
-        minSdk = libs.versions.minSdk.get().toInt()
-    }
-    buildFeatures {
-        buildConfig = true
-    }
-}
-
-kotlin {
-    jvmToolchain(17)
 }
 
 dependencies {

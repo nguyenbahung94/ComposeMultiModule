@@ -1,5 +1,5 @@
 [versions]
-agp = "8.5.0"
+agp = "8.5.2"
 compileSdk = "34"
 minSdk = "26"
 androidCore = "1.12.0"
@@ -37,6 +37,8 @@ compose-paging = "3.2.1"
 compose-lottie = "4.2.2"
 detekt = "1.23.1"
 kotlinter = "3.16.0"
+application-version-code = "1"
+application-version-name = "1.0"
 
 
 [libraries]

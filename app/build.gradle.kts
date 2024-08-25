@@ -3,21 +3,14 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.composeln.hilt)
     alias(libs.plugins.composeln.detekt)
-    alias(libs.plugins.compose.compiler)
 }
 
 android {
     defaultConfig {
         applicationId = libs.plugins.mainNameSpace.get().toString()
-        versionCode = 1
-        versionName = "1.0"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        versionCode = libs.versions.application.version.code.get().toInt()
+        versionName = libs.versions.application.version.name.get()
 
-        buildFeatures {
-            buildConfig = true
-        }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -34,8 +27,13 @@ android {
     }
 }
 
+composeCompiler {
+    enableStrongSkippingMode = true
+    reportsDestination = layout.buildDirectory.dir("compose_compiler")
+}
+
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(libs.versions.jvmTarget.get().toInt())
 }
 
 dependencies {
@@ -60,7 +58,6 @@ dependencies {
     libs.apply {
         implementation(bundles.compose)
     }
-    implementation(libs.compose.activity)
     implementation(platform(libs.compose.bom))
     implementation(libs.compose.material.icon.core)
     implementation(libs.compose.runtime)
@@ -74,9 +71,9 @@ dependencies {
     // lifecycle Dependencies
     implementation(libs.lifecyle.ktx)
 
+    implementation(libs.junit.ext)
+    implementation(libs.espresso)
     // Testing
     testImplementation(libs.junit)
     testImplementation(libs.hilt.testing)
-    implementation(libs.junit.ext)
-    implementation(libs.espresso)
 }

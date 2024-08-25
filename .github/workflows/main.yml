@@ -1,0 +1,67 @@
+name: Main CI Develop
+
+on: 
+ push:
+  branches: [main]
+
+jobs:
+  start:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+      - name: Run sample script
+        run: echo start running
+
+  lint:
+    name: Perform lint check
+    needs: [start]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          
+      - name: Cache Gradle and wrapper
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Make Gradle executable
+        run: chmod +x ./gradlew
+  
+      - name: Run lint on all modules
+        run: ./gradlew lint
+        
+      - name: Upload html test report
+        uses: actions/upload-artifact@v2
+        with:
+          name: lint.html
+          path: app/build/reports/lint-results-debug.html
+          
+      - name: Upload lint results
+        uses: actions/upload-artifact@v3
+        if: failure() || success()
+        with:
+          name: lint-results
+          path: '**/build/reports/lint-results-*.html'
+
+      - name: Lint Results to PR
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: lint-results
+          path: '**/build/reports/lint-results-*.xml'
+      
+     

@@ -1,4 +1,4 @@
-package com.example.network.extensions
+package com.example.core.utils
 
 import com.example.core.model.GenericException
 import retrofit2.Response

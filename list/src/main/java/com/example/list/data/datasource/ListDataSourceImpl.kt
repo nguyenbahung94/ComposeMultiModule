@@ -1,6 +1,6 @@
 package com.example.list.data.datasource
 
-import com.example.network.extensions.handleCall
+import com.example.core.utils.handleCall
 import javax.inject.Inject
 
 internal class ListDataSourceImpl @Inject constructor(

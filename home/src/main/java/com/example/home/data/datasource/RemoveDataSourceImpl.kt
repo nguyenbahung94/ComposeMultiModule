@@ -1,9 +1,9 @@
 package com.example.home.data.datasource
 
+import com.example.core.utils.handleCall
 import com.example.home.data.datasource.model.CountNotificationResponse
 import com.example.home.data.datasource.model.HomeResponse
 import com.example.home.data.datasource.model.TitleResponse
-import com.example.network.extensions.handleCall
 import javax.inject.Inject
 
 internal class RemoveDataSourceImpl @Inject constructor(

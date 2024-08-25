@@ -9,8 +9,6 @@ android {
 }
 
 dependencies {
-    implementation(projects.core)
-
     // Data dependencies
     implementation(libs.okhttp.logging.interceptor)
     implementation(libs.retrofit.core)

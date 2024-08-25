@@ -15,6 +15,10 @@ fun Project.configureBuildTypes(
                     "proguard-rules.pro"
                 )
             }*/
+            defaultConfig {
+                buildConfigField("String", "BASE_URL", "\"https://raw.githubusercontent.com/\"")
+                buildConfigField("Boolean", "DEVELOPMENT_MODE", "true")
+            }
             getByName("debug") {
                 isMinifyEnabled = false
                 buildConfigField("String", "BASE_URL", "\"https://raw.githubusercontent.com/\"")

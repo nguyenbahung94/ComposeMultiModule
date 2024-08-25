@@ -1,6 +1,6 @@
 package com.example.network.di
 
-import com.example.core.BuildConfig
+import com.example.network.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,6 +17,9 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetWorkModule {
+    private val url: String = BuildConfig.BASE_URL
+    private val development: Boolean = BuildConfig.DEVELOPMENT_MODE
+    private val gsonConverterFactory: GsonConverterFactory = GsonConverterFactory.create()
 
     @Provides
     @Singleton
@@ -24,9 +27,8 @@ object NetWorkModule {
 
     @Singleton
     @Provides
-    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
-        .baseUrl(BuildConfig.BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
+    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit =
+        Retrofit.Builder().baseUrl(url).addConverterFactory(gsonConverterFactory)
         .client(okHttpClient)
         .build()
 
@@ -46,7 +48,7 @@ object NetWorkModule {
     @Provides
     fun provideLoggingInterceptor(): HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
         val interceptor = HttpLoggingInterceptor()
-        interceptor.level = if (BuildConfig.DEVELOPMENT_MODE) {
+        interceptor.level = if (development) {
             HttpLoggingInterceptor.Level.BASIC
         } else {
             HttpLoggingInterceptor.Level.NONE

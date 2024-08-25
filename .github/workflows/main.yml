@@ -17,9 +17,11 @@ jobs:
   lint_job:
     uses: ./.github/workflows/job-lint.yml
 
+  build_job:
+    uses: ./.github/workflows/job-build-apk.yml
+
   sonar_job:
     uses: ./.github/workflows/job-sonar-analysis.yml
 
-  build_job:
-    uses: ./.github/workflows/job-build-apk.yml
+
 

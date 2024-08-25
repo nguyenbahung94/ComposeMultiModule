@@ -44,6 +44,7 @@ sonarqube {
         property("sonar.projectKey", "nguyenbahung94_ComposeMultiModule")
         property("sonar.organization", "nguyenbahung94")
         property("sonar.host.url", "https://sonarcloud.io")
+        property("sonar.gradle.skipCompile", "true")
     }
 }
 

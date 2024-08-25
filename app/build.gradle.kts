@@ -29,6 +29,8 @@ android {
 
 composeCompiler {
     enableStrongSkippingMode = true
+    enableNonSkippingGroupOptimization = true
+    enableIntrinsicRemember = true
     reportsDestination = layout.buildDirectory.dir("compose_compiler")
 }
 

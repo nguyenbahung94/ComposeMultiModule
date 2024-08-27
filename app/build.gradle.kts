@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.composeln.hilt)
     alias(libs.plugins.composeln.detekt)
-    id("org.sonarqube") version "4.4.1.3373"
+    id("org.sonarqube") version "5.1.0.4882"
 }
 
 android {
@@ -37,6 +37,22 @@ composeCompiler {
 
 kotlin {
     jvmToolchain(libs.versions.jvmTarget.get().toInt())
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "nguyenbahung94_ComposeMultiModule")
+        property("sonar.organization", "nguyenbahung94")
+        property("sonar.host.url", "https://sonarcloud.io")
+        property("sonar.sources", "src/main")
+        property("sonar.tests", "src/test")
+    }
+}
+
+subprojects {
+    sonarqube {
+        properties {}
+    }
 }
 
 dependencies {

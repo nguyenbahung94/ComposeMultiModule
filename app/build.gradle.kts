@@ -45,7 +45,7 @@ sonar {
         property("sonar.organization", "nguyenbahung94")
         property("sonar.host.url", "https://sonarcloud.io")
         property("sonar.sources", "src/main")
-        property("sonar.tests", "src/test")
+        //  property("sonar.tests", "src/test")
     }
 }
 
